@@ -124,7 +124,7 @@ public class Helper {
     }
 
     //Jradio lara oda özellikleri metinleri için, oda ekleme ekranındaki
-    public static String roomfeat(String number){
+    public static String roomFeat(String number){
         String feat="";
         switch (number){
             case "1":

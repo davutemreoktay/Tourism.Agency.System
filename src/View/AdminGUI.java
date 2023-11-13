@@ -136,6 +136,7 @@ public class AdminGUI extends JFrame{
         });
         exitButton.addActionListener(e -> {
             dispose();
+            LoginGUI logGUI = new LoginGUI();
         });
 
     }

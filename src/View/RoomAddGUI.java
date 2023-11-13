@@ -43,11 +43,11 @@ public class RoomAddGUI extends JFrame {
         setTitle(Config.PROJECT_TITLE);
         setVisible(true);
 
-        radioButton1.setText(Helper.roomfeat("1"));
-        radioButton2.setText(Helper.roomfeat("2"));
-        radioButton3.setText(Helper.roomfeat("3"));
-        radioButton4.setText(Helper.roomfeat("4"));
-        radioButton5.setText(Helper.roomfeat("5"));
+        radioButton1.setText(Helper.roomFeat("1"));
+        radioButton2.setText(Helper.roomFeat("2"));
+        radioButton3.setText(Helper.roomFeat("3"));
+        radioButton4.setText(Helper.roomFeat("4"));
+        radioButton5.setText(Helper.roomFeat("5"));
 
         loadHotelNameCombo();
         loadHotelTypeCombo();
@@ -93,38 +93,38 @@ public class RoomAddGUI extends JFrame {
                     ArrayList<Room> roomList = Room.getList();
                     Room addedRoom = roomList.get(Room.getList().size()-1);
                     addedRoom_id = addedRoom.getId();
-                    String room_properties = "";
+                    String room_feats = "";
                     for (int i = 1; i<=7; i++){  //room property ekleme
                         switch (i){
                             case 1:
                                 if (radioButton1.isSelected()){
-                                    room_properties += radioButton1.getText();
+                                    room_feats += radioButton1.getText();
                                 }
                                 break;
                             case 2:
                                 if (radioButton2.isSelected()){
-                                    room_properties += "\n"+radioButton2.getText();
+                                    room_feats += "\n"+radioButton2.getText();
                                 }
                                 break;
                             case 3:
                                 if (radioButton3.isSelected()){
-                                    room_properties += "\n"+radioButton3.getText();
+                                    room_feats += "\n"+radioButton3.getText();
                                 }
                                 break;
                             case 4:
                                 if (radioButton4.isSelected()){
-                                    room_properties += "\n" + radioButton4.getText();
+                                    room_feats += "\n" + radioButton4.getText();
                                 }
                                 break;
                             case 5:
                                 if (radioButton5.isSelected()){
-                                    room_properties += "\n" + radioButton5.getText();
+                                    room_feats += "\n" + radioButton5.getText();
                                 }
                                 break;
                         }
                     }
 
-                    RoomFeats.add(room_properties, addedRoom_id, fld_room_bed.getText(), Integer.parseInt(fld_room_area.getText().toString()) );
+                    RoomFeats.add(room_feats, addedRoom_id, fld_room_bed.getText(), Integer.parseInt(fld_room_area.getText().toString()) );
                     Helper.showMsg("done");
                     cmb_room_hotelname.setSelectedIndex(0);
                     cmb_room_type.setSelectedIndex(0);

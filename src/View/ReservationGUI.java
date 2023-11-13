@@ -34,8 +34,8 @@ public class ReservationGUI extends JFrame {
     private JTextField fld_child_numb;
     private JTextField fld_check_in_date;
     private JTextField fld_check_out_date;
-    private JTextField fld_total_price2;
     private JTextField fld_total_price;
+    private JTextField fld_total_price2;
 
     private final Room room;
     private int adult_numb = 0;
@@ -72,8 +72,8 @@ public class ReservationGUI extends JFrame {
         fld_check_in_date.setText(check_in);
         fld_check_out_date.setText(check_out);
 
-        total_price2 = 2* (   (room.getAdult_price() * adult_numb) + (room.getChild_price() * child_numb)  );
-        fld_total_price2.setText(total_price2 + " TL");
+        total_price =  (room.getAdult_price() * adult_numb) + (room.getChild_price() * child_numb) ;
+        fld_total_price.setText(total_price + " TL");
 
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         Date check_in_date = null;
@@ -91,8 +91,8 @@ public class ReservationGUI extends JFrame {
         long hours = minutes / 60;
         long days = hours / 24;
 
-        total_price = (int) (days * (   (room.getAdult_price() * adult_numb) + (room.getChild_price() * child_numb)   ));
-        fld_total_price.setText(String.valueOf(total_price) + " TL");
+        total_price2 = (int) (days * ((room.getAdult_price() * adult_numb) + (room.getChild_price() * child_numb)));
+        fld_total_price2.setText(String.valueOf(total_price2) + " TL");
 
         btn_add_reservation.addActionListener(e -> {
             if (Helper.isFieldEmpty(fld_client_name) || Helper.isFieldEmpty(fld_client_phone) || Helper.isFieldEmpty(fld_client_mail) || Helper.isAreaEmpty(txtArea_client_note)){
